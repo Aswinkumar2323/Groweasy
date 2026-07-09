@@ -1,6 +1,7 @@
 import { ImportResult, ParseResult, ProgressUpdate } from '@/types';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://groweasy-qulv.vercel.app';
+const rawApiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://groweasy-qulv.vercel.app';
+const API_BASE = rawApiUrl.replace(/\/$/, '');
 
 /**
  * Upload a CSV file to the backend for parsing
