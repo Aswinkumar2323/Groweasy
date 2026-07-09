@@ -22,13 +22,21 @@ app.use(
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
+// Base route for when users visit the root URL
+app.get('/', (_req, res) => {
+  res.json({
+    success: true,
+    message: 'GrowEasy CSV Importer API is running. Use /api/import to upload data.',
+  });
+});
+
 // Health check
 app.get('/api/health', (_req, res) => {
   res.json({
     status: 'ok',
     service: 'groweasy-csv-importer',
     timestamp: new Date().toISOString(),
-    gemini: process.env.GEMINI_API_KEY ? 'configured' : 'not configured',
+    openai: process.env.OPENAI_API_KEY ? 'configured' : 'not configured',
   });
 });
 
