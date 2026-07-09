@@ -78,7 +78,7 @@ groweasy/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/groweasy-csv-importer.git
+git clone git https://github.com/Aswinkumar2323/Groweasy.git
 cd groweasy-csv-importer
 ```
 
